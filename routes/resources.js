@@ -1,7 +1,7 @@
 
 const express = require('express');
-const ExpressError = require('../helpers/ExpressError');
-const Resources = require('../models/Resources');
+const ExpressError = require('../helpers/expressError');
+const Resources = require('../models/resources');
 const { authUser, authAdmin } = require('../middleware/auth');
 
 const router = express.Router();

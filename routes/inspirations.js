@@ -2,7 +2,7 @@
 
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const ExpressError = require('../helpers/ExpressError');
+const ExpressError = require('../helpers/expressError');
 const Inspirations = require('../models/inspirations');
 const { authUser, authAdmin } = require('../middleware/auth');
 const { SECRET_KEY } = require('../config');
