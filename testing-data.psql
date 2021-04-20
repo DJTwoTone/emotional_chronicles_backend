@@ -1,0 +1,76 @@
+-- DROP DATABASE IF EXISTS "emo-chron-test"
+-- WITH
+-- (FORCE);
+
+-- CREATE DATABASE "emo-chron-test";
+
+-- \c
+-- "emo-chron-test"
+
+DROP TABLE entries_list_emotions;
+DROP TABLE diary_entries;
+DROP TABLE users;
+DROP TABLE inspirations;
+DROP TABLE prompts_list;
+DROP TABLE emotions_list;
+
+CREATE TABLE users
+(
+    username TEXT PRIMARY KEY,
+    password TEXT NOT NULL,
+    first_name TEXT,
+    last_name TEXT,
+    email TEXT,
+    is_admin BOOLEAN NOT NULL default FALSE
+);
+
+CREATE TABLE prompts_list
+(
+    id SERIAL PRIMARY KEY,
+    prompt TEXT NOT NULL,
+    flagged BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE emotions_list
+(
+    emotion TEXT PRIMARY KEY
+);
+
+CREATE TABLE inspirations
+(
+    id SERIAL PRIMARY KEY,
+    inspiration TEXT NOT NULL,
+    flagged BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE diary_entries
+(
+    id SERIAL PRIMARY KEY,
+    username TEXT NOT NULL REFERENCES users ON DELETE CASCADE,
+    entry TEXT NOT NULL,
+    date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    prompt_id INTEGER NOT NULL REFERENCES prompts_list,
+    inspiration_id INTEGER NOT NULL REFERENCES inspirations,
+    joy FLOAT DEFAULT 0.0,
+    no_emotion FLOAT DEFAULT 0.0,
+    sadness FLOAT DEFAULT 0.0,
+    fear FLOAT DEFAULT 0.0,
+    surprise FLOAT DEFAULT 0.0,
+    anger FLOAT DEFAULT 0.0,
+    disgust FLOAT DEFAULT 0.0,
+    anticipation FLOAT DEFAULT 0.0,
+    trust FLOAT DEFAULT 0.0
+
+);
+
+
+CREATE TABLE entries_list_emotions
+(
+    emotion TEXT NOT NULL REFERENCES emotions_list ON DELETE CASCADE,
+    diary_entry_id INTEGER NOT NULL REFERENCES diary_entries ON DELETE CASCADE,
+    PRIMARY KEY(emotion, diary_entry_id)
+
+);
+
+-- password should be 'password'
+
