@@ -1,1 +1,1 @@
-web: node EC_backend/server.js
+web: node server.js
