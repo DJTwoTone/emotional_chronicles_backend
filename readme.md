@@ -2,7 +2,7 @@
 
 
 
-> Emotional Chronicles is a simple diary app that uses a emotional analysis service to help user keep track of their emotional state.
+> Emotional Chronicles is a simple diary app that uses an emotional analysis service to help users keep track of their emotional state.
 
 >It has a CRUD backend written in Express, and a React frontend currently using Bootstrap for styling.
 
@@ -47,7 +47,7 @@ The frontend-repo can be found at [FRONTEND](https://github.com/DJTwoTone/emotio
 
 1. Login or Signup for an account.
 1. To write a diary entry. Click on 'Today' (Note - If you have already written an entry today, you will be redirected.)
-    1. You will be presented with list of emotions. Click on the ones you are feeling today.
+    1. You will be presented with a list of emotions. Click on the ones you are feeling today.
     1. Next, read your writing prompt.
         1. If you don't like it you can get a new one
     1. Write away.
@@ -59,18 +59,18 @@ The frontend-repo can be found at [FRONTEND](https://github.com/DJTwoTone/emotio
     1. Click on the day of interest, and you will be taken to that diary entry.
     1. Under the calendar, you will find a graph of you emotions for each month.
     1. In addition, you will also find a link to a list of all your diary entries at the bottom.
-1. You can also access a list of inspirational quotes and add some inspiration, if you'd like to share.
+1. You can also access a list of inspirational quotes or add some inspiration if you'd like to share.
     
 
 ### Behind the Scenes
 
 #### The Backend
 
-The backend of this app is built on a PostgreSQL server with the Express framework doing the heavy lifting. Of note, the Luxon library was used to help with some of the date/time work. Dates and time is tough.
+The backend of this app is built on a PostgreSQL server with the Express framework doing the heavy lifting. Of note, the Luxon library was used to help with some of the date/time work. Dates and time are tough.
 
 #### The Frontend
 
-This is a React app which makes use of [Symanto](https://api.symanto.net)'s emotional analysis API. It also makes use of several frameworks and libraries:
+This is a React app that makes use of [Symanto](https://api.symanto.net)'s emotional analysis API. It also makes use of several frameworks and libraries:
 
  - Bootstrap (in particular React Bootstrap is used for styling)
  - Luxon, again, is used to help with the date/time work
@@ -89,7 +89,7 @@ Before you get started, there are a few things that you'll need to have installe
 
 Most of the libraries you need will be installed from the package.json files, but:
 
-- You will need an API key from for emotion analysis API [Symanto](https://api.symanto.net). You will need to setup a .env file and include it API_KEY=whatever_your_API_key_is
+- You will need an API key from the emotion analysis API [Symanto](https://api.symanto.net). You will need to set up a .env file and include it API_KEY=whatever_your_API_key_is
 
 
 ## Installing
@@ -129,7 +129,7 @@ Those should get you going
 
 ## Running Tests
 
-There are currently tests for both the backend and the frontend. These tests will continue to be developed to better ensure quality in the code base. 
+There are currently tests for both the backend and the frontend. These tests will continue to be developed to better ensure quality in the codebase. 
 
 
 
@@ -179,10 +179,10 @@ Please make sure to update tests as appropriate.
 
 ## Possible Future Additions
 
-- There is a much better emotional analysis service, but it cost cold hard cash. It could be implemented in the future is this project were to take a commercial turn (I doubt it, but you never know).
+- There is a much better emotional analysis service, but it cost cold hard cash. It could be implemented in the future if this project were to take a commercial turn (I doubt it, but you never know).
 - It would be nice to have a feature for downloading a user's diary (formatted or as a spreadsheet).
 - Add the ability to editing accounts.
-- Including email / text reminder to write in the diary.
+- Including email/text reminder to write in the diary.
 - Adding user input range to emotion graph.
 - The UI needs a lot of work. I'm waiting patiently for my expert to take a whack at it.
 - Tightening up security and user access.
