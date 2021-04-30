@@ -12,6 +12,8 @@ const nock = require('nock')
 
 
 const API_KEY = process.env.API_KEY;
+const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY;
+
 const gettysburg = "Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal. Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived, and so dedicated, can long endure."
 let testData = {}
 
@@ -416,9 +418,9 @@ describe("test POST routes for diaries", () =>{
 
     test('adds and entry to the diary', async function() {
         
-        nock('https://api.symanto.net', {
+        nock('https://ekman-emotion-analysis.p.rapidapi.com', {
             reqheaders: {
-                'x-api-key': API_KEY, 
+                'x-rapidapi-key': RAPIDAPI_KEY, 
                 'Content-Type': 'application/json'
             }
           })

@@ -4,31 +4,36 @@ require('dotenv').config()
 
 async function symantoCall(entry) {
 
-    const data = JSON.stringify([{
-        "text": entry,
-        "language":"en"
+    // const API_KEY = process.env.API_KEY;
+    const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY;
+    
+    let entryData = JSON.stringify([{
+        text: entry,
+        language:"en"
+
     }])
-
-
     
-    const API_KEY = process.env.API_KEY;
 
-    const config = {
+    let config = {
         method: 'post',
-        url: 'https://api.symanto.net/ekman-emotion?all=true',
+        url: 'https://ekman-emotion-analysis.p.rapidapi.com/ekman-emotion?all=true',
         headers: {
-            'x-api-key': API_KEY, 
-            'Content-Type': 'application/json'
+          'content-type': 'application/json',
+          accept: 'application/json',
+          'x-rapidapi-key': RAPIDAPI_KEY,
+          'x-rapidapi-host': 'ekman-emotion-analysis.p.rapidapi.com'
         },
-        data
-    }
+        data: entryData
+      };
 
-    
-
-    let res = await axios(config)
-    
+      let res = await axios(config)
+      
+    console.log(res.data)
     return res.data
 
 }
+
+
+
 
 module.exports = symantoCall;

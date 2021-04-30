@@ -89,7 +89,14 @@ router.post('/:username', authUser, async function (req, res, next) {
 
         const calldata = await symantoCall(diaryentry);
 
-        const emopredictions = calldata[0].predictions.reduce((acc, emo) => {
+        if (!calldata[0].predictions) {
+          
+            let emopredictions = {"fear":0,"anger":0,"sadness":0,"surprise":0,"disgust":0,"joy":0,"no-emotion":0};
+
+            throw new ExpressError("The emotional analysis service is currently down.")
+        }
+
+        let emopredictions = calldata[0].predictions.reduce((acc, emo) => {
             let { prediction, probability } = emo;
             return {...acc, [prediction]: probability}
         }, {});

@@ -1,4 +1,7 @@
-
+/**
+ * There should be defaults for all these variables.
+ * They can be set in a .env file on development or via the command line on deployment
+ */
 
 require('dotenv').config();
 
@@ -6,7 +9,7 @@ const SECRET_KEY = process.env.SECRET_KEY || "test";
 
 const PORT = +process.env.PORT || 3001;
 
-const sslValue = process.env.ssl || null
+const SSLSETTING = process.env.ssl || null;
 
 
 let DB_URI;
@@ -20,5 +23,6 @@ if (process.env.NODE_ENV === "test") {
 module.exports = {
     SECRET_KEY,
     PORT,
-    DB_URI
+    DB_URI,
+    SSLSETTING
 };
