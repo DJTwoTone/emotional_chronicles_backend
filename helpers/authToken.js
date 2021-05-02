@@ -1,3 +1,9 @@
+/**
+ * You going to need a token.
+ * This little function can be modified to create one for you
+ */
+
+
 const jwt = require("jsonwebtoken");
 const { SECRET_KEY } = require('../config');
 

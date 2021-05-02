@@ -1,3 +1,12 @@
+/**
+ * This admin model could be included in other models, I felt that keeping them here was more appropriate for their functionality as they are actions for only an admin.
+ * They focus on inspirational quotes becuase the functionality for prompts has not been implimented, but prompts routes would be similar.
+ * Here we can get flagged quotes, approve flagged quotes, delete quotes
+ * 
+ * Note - If the functionality for prompt were implimented, it may be appropriate to create a seperate model.
+ */
+
+
 
 const db = require('../db');
 

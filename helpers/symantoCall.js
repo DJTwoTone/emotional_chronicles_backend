@@ -1,3 +1,10 @@
+/**
+ * This is our helper to make the API call to the emotional analysis server. Notice that the entry string is truncated to 1900 character. 
+ * At the moment there machine learning model truncates text at 2000 characters. 
+ * 
+ * You will need an API key from RapidAPI to play with this particular API 
+ */
+
 var axios = require('axios');
 require('dotenv').config()
 
@@ -7,8 +14,10 @@ async function symantoCall(entry) {
     // const API_KEY = process.env.API_KEY;
     const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY;
     
+    const truncatedEntry = entry.substring(0, 1900);
+
     let entryData = JSON.stringify([{
-        text: entry,
+        text: truncatedEntry,
         language:"en"
 
     }])

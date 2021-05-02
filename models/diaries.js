@@ -1,4 +1,16 @@
-
+/**
+ * This is our most complicated model. Feel free to reach out with questions.
+ * 
+ * Here we can:
+ *  check if an entry has been made on a praticular day,
+ *  add a diary entry to the database,
+ *  get all the entries for a user,
+ *  get a single entry for a user,
+ *  and get a month of entries for a user
+ * 
+ * 
+ * Functionality like deleting and editing have not been implimented, but could be
+ */
 const db = require('../db');
 const { DateTime } = require("luxon");
 

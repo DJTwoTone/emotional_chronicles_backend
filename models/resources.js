@@ -1,3 +1,8 @@
+/**
+ * This is unused. They have been implimnted elsewhere and may be deleted in the future.
+ * 
+ */
+
 const db = require('../db');
 
 

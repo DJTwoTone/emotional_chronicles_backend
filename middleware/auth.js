@@ -1,3 +1,11 @@
+/**
+ * This is our current collection for middleware. 
+ * We checks to make sure a user is an actual user, to see is a user is an admin, and a check to see if a user is who they say they are.
+ * We are splitting the authorization for the header. I'm not sure that this is the most appropriate way to do (To be honest it seemed wrong), but it also seems to be really common.
+ * 
+ */
+
+
 const jwt = require('jsonwebtoken');
 const { SECRET_KEY } = require('../config');
 const ExpressError = require('../helpers/expressError');

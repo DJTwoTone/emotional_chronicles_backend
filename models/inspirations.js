@@ -1,3 +1,9 @@
+/**
+ * This model is for pieces of inspirational quotes provided to the user.
+ * It gets a certain number of inspirational quotes, adds them, checks if any have been flagged as inappropriate, changes the flag, or deletes a quote.
+ * In the future a function to editing the quotes could be included.
+ */
+
 const db = require('../db');
 
 

@@ -1,3 +1,11 @@
+/**
+ * WELCOME TO THE MAIN APP SET UP OF EMOTIONAL CHRONICLES
+ * 
+ * Here you can see where and how all our endpoints are implimented.
+ * 
+ * As well as a little bit of error handling.
+ */
+
 const express = require('express');
 const ExpressError = require('./helpers/expressError');
 

@@ -1,3 +1,8 @@
+/**
+ * this helper function is user to make parital updates the a SQL databse
+ * if you give it the table you want, the columns you need as items, the key you are looking for as well as the id, it should give you a nice sql query
+ */
+
 function partialUpdateSQL(table, items, key, id) {
 
     let idx = 1;

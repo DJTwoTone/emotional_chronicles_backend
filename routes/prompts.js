@@ -1,7 +1,17 @@
+/**
+ *  We have 5 endpoints here.
+ * 1. Gets all flagged writing prompts.
+ * 2. Gets a certain number of prompts, ones are flagged are not included.
+ * 3. Adds a prompt. If it is added by a user, it is flagged for approval. If it is added by an admin, it is automatically approved
+ * 4. Switches the flag on a prompt, this can be used by users to mark a prompt as inappropriate or by an admin to approve a prompt.
+ * 5. Deletes a prompt.
+ * In addition, much of this functionality has not been implimented on the frontend, but could be easily. 
+ */
+
 
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const ExpressError = require('../helpers/expressError');
+// const ExpressError = require('../helpers/expressError');
 const Prompts = require('../models/prompts');
 const { authUser, authAdmin } = require('../middleware/auth');
 const { SECRET_KEY } = require('../config');

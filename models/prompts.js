@@ -1,3 +1,11 @@
+/**
+ * This model is for writing prompts provided to the user.
+ * It gets a certain number of prompts, adds them, checks if any have been flagged as inappropriate, changes the flag, or deletes a prompt.
+ * In the future a function to editing the prompts could be included.
+ * In addition, much of this functionality has not been implimented on the frontend, but could be easily.
+ */
+
+
 const db = require('../db');
 
 class Prompts {

@@ -1,3 +1,15 @@
+/**
+ * In this model, we can:
+ * check if a user exists,
+ * register new users,
+ * retrieve a users information,
+ * update a user (not implimented anywhere),
+ * delte a user (not implimented anywhere),
+ * and finally, authenticate a users password.
+ * 
+ */
+
+
 const db = require('../db');
 const bcrypt = require('bcrypt');
 const ExpressError = require('../helpers/expressError');

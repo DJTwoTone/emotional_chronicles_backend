@@ -1,13 +1,16 @@
-//add express custom errors
+/**
+ * This route only does one thing. It gets a list of emotions for the user to choose from.
+ * 
+ * In the future, including the same functionality as wiriting prompts and inspiration might be desireable, but at the moment, it is unneeded.
+ */
 
 const express = require('express');
 
 const Emotions = require('../models/emotions');
 
-
 const router = express.Router();
 
-//emotions routes
+
 
 router.get('/', async function (req, res, next) {
     try {

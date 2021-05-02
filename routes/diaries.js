@@ -1,3 +1,19 @@
+/**
+ * These are the routes for the actual diary. Buckle-up, there's a lot to explain.
+ * A the moment, there are 5 routes:
+ * 
+ * 1. Checks to see if the user has made an entry yet today. This is used on the front-end to disallow users from making multiple entries on any given day. Depending on future usage this may not be needed.
+ * 2. Gets a diary entry for a specific date.
+ * 3. Given a date in a specific month, this endpoint should return all diary entries for that month
+ * 4. Returns all the diray entries for a specific user
+ * 5. Adds an entry to the database.
+ * 
+ * Two endpoints weren't included, those of editing and deleting diary entries. I have so many thoughts about this, but if this app were to have users, it could change after some feedback and discussion.
+ * 
+ */
+
+
+
 const express = require('express');
 const ExpressError = require('../helpers/expressError');
 const { DateTime } = require("luxon")
@@ -39,7 +55,7 @@ router.get('/:username/:date', checkCorrectUser, async function(req, res, next) 
 
 
 
-//need to get a month of entries
+//get a month of entries
 
 router.get('/:username/month/:date', checkCorrectUser, async function(req, res, next) {
     try {
@@ -89,9 +105,13 @@ router.post('/:username', authUser, async function (req, res, next) {
 
         const calldata = await symantoCall(diaryentry);
 
+        /**
+         * Currently, this is disallowing entries if the emotional analysis service is down. It should be redone and a warning and add null valued anaysis
+         */
+
         if (!calldata[0].predictions) {
           
-            let emopredictions = {"fear":0,"anger":0,"sadness":0,"surprise":0,"disgust":0,"joy":0,"no-emotion":0};
+            // let emopredictions = {"fear":0,"anger":0,"sadness":0,"surprise":0,"disgust":0,"joy":0,"no-emotion":0};
 
             throw new ExpressError("The emotional analysis service is currently down.")
         }
@@ -116,7 +136,7 @@ router.post('/:username', authUser, async function (req, res, next) {
 
 //edit entry - I don't want this
 
-//delete entry - need to delete all for a user including the link table
+//delete entry - need to delete all for a user including the link table or ?
 
 
 module.exports = router;

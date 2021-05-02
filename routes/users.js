@@ -1,3 +1,13 @@
+/**
+ * 2 main endpoints have been implimented here.
+ * 1. gets a user from the database
+ * 2. creates a new users
+ * 
+ * 2 other routes have been created (editing the user and deleteing the user) and tested, but they are not implimented anywhere else.
+ * I have thoughts on this, but need some user feedback and discussion first. 
+ */
+
+
 const express = require('express');
 const ExpressError = require('../helpers/expressError');
 const User = require('../models/user');

@@ -1,8 +1,16 @@
-//add express custom errors
+/**
+ *  We have 5 endpoints here.
+ * 1. Gets all flagged inspirational quotes.
+ * 2. Gets a certain number of quotes, ones are flagged are not included.
+ * 3. Adds ispirational quotes. If it is added by a user, it is flagged for approval. If it is added by an admin, it is automatically approved
+ * 4. Switches the flag on a quote, this can be used by users to mark a quote as suspect or by an admin to approve a quote.
+ * 5. Deletes a quote. 
+ */
+
 
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const ExpressError = require('../helpers/expressError');
+// const ExpressError = require('../helpers/expressError');
 const Inspirations = require('../models/inspirations');
 const { authUser, authAdmin } = require('../middleware/auth');
 const { SECRET_KEY } = require('../config');
@@ -24,7 +32,7 @@ router.get('/flagged', authAdmin, async function(req, res, next) {
 })
 
 
-//this should be a query apram
+
 router.get('/', async function (req, res, next) {
     try {
         

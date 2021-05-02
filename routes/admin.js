@@ -1,8 +1,19 @@
+/**
+ * These admin endpoints could be included in other routes, I felt that keeping them here was more appropriate for their functionality as they are actions for only an admin.
+ * They focus on inspirational quotes becuase the functionality for prompts has not been implimented, but prompts routes would be similar.
+ * The 4 routes allow Admins to:
+ * 1. Get a list of the inspirational quotes that need approval
+ * 2. Add inspirational quotes
+ * 3. Approve inspirational quotes
+ * 4. Delete inspirational quotes
+ */
+
+
 const express = require('express');
-const ExpressError = require('../helpers/expressError');
+// const ExpressError = require('../helpers/expressError');
 const Admin = require('../models/admin');
 const { authAdmin } = require('../middleware/auth');
-const { json } = require('express');
+// const { json } = require('express');
 
 const router = express.Router();
 
