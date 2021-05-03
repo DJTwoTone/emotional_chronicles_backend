@@ -8,7 +8,7 @@ const { DB_URI, SSLSETTING } = require('./config');
 
 const db = new Client({
     connectionString: DB_URI,  
-    ssl: SSLSETTING
+    // ssl: SSLSETTING
 });
 
 
